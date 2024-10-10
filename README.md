@@ -51,6 +51,13 @@ Boatyards store a large variety of items related to the boat. During the boating
 
 This project aims to ease this problem by creating a platform where stored boats inventory can be recorded at the end of the season during decommissioning, updated as work is preformed, and verified against the following season during commissioning. Additionally coordiaion will be aided by all workers being able to see the current status and location of items. Lastly customer relationships will be aided due to the customer being aware of what was stored with the boat and what was delivered during commissioning.
 
+## Packages to Install
+
+[ ] Node
+[ ] Express
+
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/Kirk-Esterline/Storage-app.svg?style=for-the-badge
