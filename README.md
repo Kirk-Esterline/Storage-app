@@ -56,6 +56,7 @@ This project aims to ease this problem by creating a platform where stored boats
 [ ] Node
 [ ] Express
 [ ] Postgres
+[ ] @neondatabase/serverless
 [ ] dotenv
 
 
