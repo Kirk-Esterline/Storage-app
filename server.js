@@ -1,37 +1,50 @@
-// Connect to Neon DB
+// Initiate Server
 
-require("dotenv").config();
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const flash = require('express-flash')
+const logger = require('morgan')
+const connectDB = require('./config/database')
+const mainRoutes = require('./routes/main')
+const todoRoutes = require('./routes/todos')
+const PORT = process.env.PORT || 8000
 
-const http = require("http");
-const { neon } = require("@neondatabase/serverless");
+require('dotenv').config({path: '.env'})
 
-const sql = neon(process.env.DATABASE_URL);
+// Passport configuration
+require('./config/passport')(passport)
 
-const requestHandler = async (req, res) => {
-  const result = await sql`SELECT version()`;
-  const { version } = result[0];
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end(version);
-};
+connectDB()
 
-http.createServer(requestHandler).listen(3000, () => {
-  console.log("Server running at http://localhost:3000");
-});
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(logger('dev'))
 
+// Sessions
+app.use(
+    session({
+      secret: process.env.SECRET_SAUCE,
+      resave: false,
+      saveUninitialized: false,
+      store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    })
+)
 
-async function testRun() {
-    try {
-        const post = await sql('SELECT * FROM playing_with_neon', [postID]);
-        if(!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
-        console.log("It helps if you call the function")
-        console.log(post);
-    }
-    catch (error) {
-        console.error(error.message);
-    }
-}
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
-testRun();
+app.use(flash())
 
+app.use('/', mainRoutes)
+app.use('/todos', todoRoutes)
+
+app.listen(PORT, ()=>{
+    console.log(`Sever is running on Port${PORT}, you had better go catch it!`)
+})
