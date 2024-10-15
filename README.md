@@ -55,10 +55,22 @@ This project aims to ease this problem by creating a platform where stored boats
 
 [ ] Node
 [ ] Express
-[ ] Postgres
-[ ] @neondatabase/serverless
+    Postgres (might return to postgres in the future, but for now will stick with mongodb)
+    @neondatabase/serverless (might use Neon in the future but for now we are returning to Mongo)
 [ ] dotenv
-
+[ ] bcrypt
+[ ] connect-mongo
+[ ] ejs
+[ ] express
+[ ] express-flash
+[ ] express-session
+[ ] mongodb
+[ ] mongoose
+[ ] morgan
+[ ] nodemon
+[ ] passport
+[ ] passport-local
+[ ] validator
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
