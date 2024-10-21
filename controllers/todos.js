@@ -8,7 +8,7 @@ module.exports = {
             const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
-            console.log(err)
+            console.log('Opps that went wrong')
         }
     },
     createTodo: async (req, res) => {

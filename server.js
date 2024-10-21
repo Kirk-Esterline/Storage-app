@@ -30,9 +30,9 @@ app.use(logger('dev'))
 app.use(
     session({
       secret: 'keyboard cat',
-      // resave: false,
-      // saveUninitialized: false,
-      store: MongoStore.create({ mongooseConnection: mongoose.connection }),
+      resave: false,
+      saveUninitialized: false,
+      store: MongoStore.create({ mongoUrl: process.env.DB_STRING }),
     })
 )
 
