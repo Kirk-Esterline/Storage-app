@@ -74,7 +74,8 @@ This project aims to ease this problem by creating a platform where stored boats
 
 ## Notes about current issues
 
-Currently working through a connection issue when an updated connect-mongo version. The current MongoStore version requires a different connection string than the template code the server.js was based on. 
+Working on tracking down a server error. The Day has been spent updating old Mongoose functions to work with the new implementation and that has not been going according to plan.
+Completed - Currently working through a connection issue when an updated connect-mongo version. The current MongoStore version requires a different connection string than the template code the server.js was based on. 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
