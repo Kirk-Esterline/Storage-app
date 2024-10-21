@@ -53,24 +53,28 @@ This project aims to ease this problem by creating a platform where stored boats
 
 ## Packages to Install
 
-[ ] Node
-[ ] Express
+- [ ] Node
+- [ ] Express
     Postgres (might return to postgres in the future, but for now will stick with mongodb)
     @neondatabase/serverless (might use Neon in the future but for now we are returning to Mongo)
-[ ] dotenv
-[ ] bcrypt
-[ ] connect-mongo
-[ ] ejs
-[ ] express
-[ ] express-flash
-[ ] express-session
-[ ] mongodb
-[ ] mongoose
-[ ] morgan
-[ ] nodemon
-[ ] passport
-[ ] passport-local
-[ ] validator
+- [ ] dotenv
+- [ ] bcrypt
+- [ ] connect-mongo
+- [ ] ejs
+- [ ] express
+- [ ] express-flash
+- [ ] express-session
+- [ ] mongodb
+- [ ] mongoose
+- [ ] morgan
+- [ ] nodemon
+- [ ] passport
+- [ ] passport-local
+- [ ] validator
+
+## Notes about current issues
+
+Currently working through a connection issue when an updated connect-mongo version. The current MongoStore version requires a different connection string than the template code the server.js was based on. 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
