@@ -1,5 +1,3 @@
-const { markComplete } = require("../../controllers/todos")
-
 const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
@@ -53,9 +51,9 @@ async function markComplete() {
 }
 
 async function markIncomplete() {
-    const todo = this.parentNode.dataset.id
+    const todoId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todo/markComplete', {
+        const response = await fetch('todos/markIncomplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
