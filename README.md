@@ -55,8 +55,6 @@ This project aims to ease this problem by creating a platform where stored boats
 
 - [ ] Node
 - [ ] Express
-    Postgres (might return to postgres in the future, but for now will stick with mongodb)
-    @neondatabase/serverless (might use Neon in the future but for now we are returning to Mongo)
 - [ ] dotenv
 - [ ] bcrypt
 - [ ] connect-mongo
