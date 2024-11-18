@@ -4,6 +4,18 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
+  role: {
+    type: String,
+    required: true,
+  },
+  admin: {
+    type: Boolean,
+    required: true,
+  },
+  organization: {
+    type: String,
+    required: true,
+  },
   password: String
 })
 
